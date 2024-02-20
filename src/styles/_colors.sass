@@ -41,3 +41,11 @@ $purple-600: #B04ACF
 $purple-700: #B85DD6
 $purple-800: #C170DC
 $purple-900: #C982E1
+
+$purpleToRed: #8039A8, #903880, #9C3663, #A33550, #AA3540
+
+@mixin gradient($direction, $gradientColors)
+  background: -webkit-linear-gradient($direction, $gradientColors)
+  background: -moz-linear-gradient($direction, $gradientColors)
+  background: -o-linear-gradient($direction, $gradientColors)
+  background: linear-gradient($direction, $gradientColors)

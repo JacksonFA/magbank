@@ -1,4 +1,4 @@
-@use 'util'
+@use 'bootstrap/scss/bootstrap'
 @use 'layout'
 @import 'colors'
 
@@ -8,5 +8,13 @@
   padding: 0
   margin: 0
 
-h1
-  font-size: 100px
+html
+  font-size: 62.5%
+
+.light-theme
+  background-color: #{$surface-light}
+  color: #{$surface-dark}
+
+.dark-theme
+  background-color: #{$surface-dark}
+  color: #{$surface-light}

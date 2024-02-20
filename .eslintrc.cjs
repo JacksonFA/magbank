@@ -30,6 +30,7 @@ module.exports = {
     'react'
   ],
   'rules': {
+    'no-unused-vars': 'off',
     'indent': [
       'warn',
       2
