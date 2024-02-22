@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom'
-import './Login.sass'
 
 export default function Login() {
   // const navigate = useNavigate()
@@ -9,9 +8,9 @@ export default function Login() {
   // }
 
   return (
-    <main className="loginBgColor color-white w-full h-max grid-center gap-xl font-lg">
+    <main className="loginBgColor color-light w-full h-max grid-center gap-xl font-lg">
       Login
-      {/* <a href='#' onClick={goBack} className="color-white">
+      {/* <a href='#' onClick={goBack} className="color-light">
         Voltar
       </a> */}
       <Link to="/">Voltar</Link>

@@ -8,13 +8,13 @@ NavLinks.propTypes = {
 export function NavLinks({ className }) {
   return (
     <div className={className}>
-      <Link to="#" className="color-white font-sm hover dec-none">
+      <Link to="#" className="color-light font-sm hover dec-none">
         Cartão
       </Link>
-      <Link to="#" className="color-white font-sm hover dec-none">
+      <Link to="#" className="color-light font-sm hover dec-none">
         Quem somos
       </Link>
-      <Link to="#" className="color-white font-sm hover dec-none">
+      <Link to="#" className="color-light font-sm hover dec-none">
         FAQ
       </Link>
     </div>
