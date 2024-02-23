@@ -1,6 +1,7 @@
 import { Button, Col, Image, Row } from 'react-bootstrap'
 import { Header } from '../components/Header/Header'
 import { Hero } from '../components/Hero/Hero'
+import { Footer } from '../components/Footer/Footer'
 import creditCard from '../assests/credit_card.png'
 import card1Img from '../assests/card1.png'
 
@@ -64,7 +65,7 @@ export default function Home() {
         {/* QUEM SOMOS */}
         {/* FAQ */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
