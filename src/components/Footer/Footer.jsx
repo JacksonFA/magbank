@@ -1,38 +1,44 @@
 import { Container, Row, Col, Image } from 'react-bootstrap'
-import { LogoFooter } from '../Logo/FooterLogo'
-import './Footer.scss'
-
+import { FooterLogo } from '../Logo/FooterLogo'
 import applestore from '../../assests/applestore.png'
 import googleplay from '../../assests/googleplay.png'
-import facebookIcon from '../../assests/icons8-facebook-50.png'
-import twitterIcon from '../../assests/icons8-twitter-50.png'
-import youtubeIcon from '../../assests/icons8-youtube-50.png'
+import facebookIcon from '../../assests/facebook.png'
+import twitterIcon from '../../assests/twitter.png'
+import youtubeIcon from '../../assests/youtube.png'
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer className="bg-light">
       <Container>
         <Row className="text-center py-5">
           <Col xs={12} lg={6} className="text-lg-left">
-            <LogoFooter />
+            <FooterLogo />
           </Col>
-          <Col className="d-none d-lg-block " xs={12} lg={4}>
-            <Image src={applestore} />
-            <Image src={googleplay} style={{ marginLeft: '15px' }} />
+          <Col className="d-none d-lg-flex gap-md" lg={4}>
+            <a href="https://www.apple.com/br/app-store/" target="_blank" rel="noopener noreferrer">
+              <Image src={applestore} />
+            </a>
+            <a href="https://play.google.com/store/" target="_blank" rel="noopener noreferrer">
+              <Image src={googleplay} />
+            </a>
           </Col>
-          <Col className="d-lg-none mb-5 mt-5" xs={12} lg={4}>
-            <Image src={applestore} />
-            <Image src={googleplay} style={{ marginLeft: '15px' }} />
+          <Col className="flex-center d-lg-none my-5 gap-md" xs={12}>
+            <a href="https://www.apple.com/br/app-store/" target="_blank" rel="noopener noreferrer">
+              <Image src={applestore} />
+            </a>
+            <a href="https://play.google.com/store/" target="_blank" rel="noopener noreferrer">
+              <Image src={googleplay} />
+            </a>
           </Col>
-          <Col xs={12} lg={2} className="d-flex align-items-center justify-content-center">
+          <Col xs={12} lg={2} className="flex-center">
             <a href="http://facebook.com/" target="_blank" rel="noopener noreferrer">
-              <Image className="icon" src={facebookIcon} />
+              <Image width={30} height={30} src={facebookIcon} />
             </a>
             <a href="http://twitter.com/" target="_blank" rel="noopener noreferrer">
-              <Image className="icon" src={twitterIcon} />
+              <Image width={30} height={30} src={twitterIcon} />
             </a>
             <a href="http://youtube.com/" target="_blank" rel="noopener noreferrer">
-              <Image className="icon" src={youtubeIcon} />
+              <Image width={30} height={30} src={youtubeIcon} />
             </a>
           </Col>
         </Row>

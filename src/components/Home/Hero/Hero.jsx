@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
-import heroBackground from '../../assests/hero.png'
-import heroLogo from '../../assests/logo-hero.png'
+import heroBackground from '../../../assests/hero.png'
+import heroLogo from '../../../assests/logo-hero.png'
 import './Hero.sass'
 
 export function Hero() {

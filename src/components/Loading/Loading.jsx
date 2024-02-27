@@ -1,9 +1,21 @@
 import './Loading.sass'
+import { bool, string } from 'prop-types'
 
-export function Loading() {
+Loading.propTypes = {
+  withBackground: bool,
+  text: string,
+}
+
+export function Loading({ withBackground = true, text = 'Carregando...' }) {
+  let backgroundConfigs = ''
+
+  if (withBackground) {
+    backgroundConfigs = 'w-full h-max bg-purple-100 color-light'
+  }
+
   return (
-    <div className="w-full h-max bg-purple-100 color-light flex-center gap-md spinner">
-      <span className="font-md">Carregando...</span>
+    <div className={`flex-center gap-md spinner ${backgroundConfigs}`}>
+      <span className="font-md">{text}</span>
       <div className="half-spinner"></div>
     </div>
   )
