@@ -1,0 +1,27 @@
+@import '../../../styles/_colors'
+
+.accordion-item
+  border: none
+
+.accordion-button
+  text-align: center
+  background-color: $gray-100
+  color: $surface-white
+  box-shadow: none !important
+  font-size: 1.3rem
+
+  &::after
+    background: none !important
+    border: solid $surface-white
+    border-width: 0 .1rem .1rem 0
+    width: .6rem
+    height: .6rem
+    transform: rotate(45deg)
+    -webkit-transform: rotate(45deg)
+
+  &:not(.collapsed)
+    @extend .accordion-button
+    &::after
+      background: none !important
+      transform: rotate(-135deg)
+      -webkit-transform: rotate(-135deg)
