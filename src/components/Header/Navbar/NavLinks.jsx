@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { string } from 'prop-types'
 
 NavLinks.propTypes = {
@@ -8,15 +7,15 @@ NavLinks.propTypes = {
 export function NavLinks({ className }) {
   return (
     <div className={className}>
-      <Link to="#" className="color-light font-sm hover dec-none">
+      <a href="#cartao" className="color-light font-sm hover dec-none">
         Cartão
-      </Link>
-      <Link to="#" className="color-light font-sm hover dec-none">
+      </a>
+      <a href="#quemsomos" className="color-light font-sm hover dec-none">
         Quem somos
-      </Link>
-      <Link to="#" className="color-light font-sm hover dec-none">
+      </a>
+      <a href="#faq" className="color-light font-sm hover dec-none">
         FAQ
-      </Link>
+      </a>
     </div>
   )
 }

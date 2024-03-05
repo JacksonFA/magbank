@@ -6,7 +6,7 @@ import './Resources.sass'
 
 export function Resources() {
   return (
-    <section className="container">
+    <section id="cartao" className="container py-2xl">
       <Row className="p-lg-5">
         <Col lg>
           <h3 className="color-purple-200 font-md py-xl title">Cartão de crédito</h3>

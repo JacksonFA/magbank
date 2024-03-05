@@ -1,0 +1,33 @@
+@import '../../styles/_colors'
+  
+.one
+  background-color: $green-200
+  padding: 1.6rem 3.2rem
+  font-size: 1.8rem
+  line-height: 2.4rem
+  font-weight: 400
+
+.two
+  @extend .one
+  padding: 3rem 6rem
+  border-radius: 1rem
+
+  @media(min-width: 992px)
+    padding: 3rem 10rem
+    
+.three
+  padding: 1.6rem 3.2rem
+  font-size: 1.4rem
+  line-height: 1.8rem
+  font-weight: 100
+
+.four
+  padding: 1rem 8rem
+  margin-bottom: 1rem
+  font-size: 1.8rem
+  line-height: 2.4rem
+  font-weight: 400
+
+  @media(min-width: 992px)
+    padding: 2rem 8rem
+  font-weight: 700

@@ -4,10 +4,11 @@ import backgroundImg from '../../../assests/institutional.png'
 import backgroundImgDesktop from '../../../assests/institutional-desktop.png'
 import { IconText } from '../../IconText/IconText'
 import './Institutional.sass'
+import { ConfirmButton } from '../../ConfirmButton/ConfirmButton'
 
 export function Institutional() {
   return (
-    <section className="bg-purple-100 color-white relative">
+    <section id="quemsomos" className="bg-purple-100 color-white relative">
       <Image
         src={backgroundImg}
         alt="Background institucional"
@@ -18,7 +19,7 @@ export function Institutional() {
         alt="Background institucional"
         className="d-none d-lg-block backgroundImg"
       />
-      <Container className="relative">
+      <Container className="relative py-2xl">
         <Row>
           <Col xs={12} lg={4} />
           <Col xs={12} lg={5} className="flex-center-column px-xl py-sm">
@@ -53,9 +54,12 @@ export function Institutional() {
                 Transações mais seguras
               </IconText>
             </div>
-            <Button variant="outline-light" className="institutional-button font-sm mb-5">
-              Abra sua conta
-            </Button>
+            <ConfirmButton
+              variant="outline-light"
+              divClassName=""
+              buttonStyle="four"
+              text="Abra sua conta"
+            />
           </Col>
         </Row>
       </Container>

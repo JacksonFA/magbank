@@ -1,15 +1,37 @@
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
-import { string } from 'prop-types'
+import { string, func } from 'prop-types'
+import { LoginTypeContext } from '../../contexts/LoginTypeContext'
+import './ConfirmButton.sass'
 
 ConfirmButton.propTypes = {
-  action: string.isRequired,
+  variant: string,
+  text: string.isRequired,
+  divClassName: string,
+  buttonStyle: string,
+  handle: func,
 }
 
-export function ConfirmButton({ action }) {
+export function ConfirmButton({
+  variant = 'success',
+  text,
+  divClassName = 'flex-center p-2xl',
+  buttonStyle = 'one',
+  handle,
+}) {
+  const navigate = useNavigate()
+  const { setType } = useContext(LoginTypeContext)
+
+  function handleNavigate() {
+    setType('createAccount')
+    navigate('/login', { preventScrollReset: true })
+  }
+
   return (
-    <div className="flex-center p-2xl">
-      <Button variant="success" className="bg-green-200 py-md px-xl font-sm">
-        {action}
+    <div className={divClassName}>
+      <Button variant={variant} className={buttonStyle} onClick={handle ?? handleNavigate}>
+        {text}
       </Button>
     </div>
   )

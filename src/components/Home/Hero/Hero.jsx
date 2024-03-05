@@ -1,17 +1,11 @@
-import { useNavigate } from 'react-router-dom'
-import { Button, Col, Container, Image, Row } from 'react-bootstrap'
+import { Col, Container, Image, Row } from 'react-bootstrap'
 import heroBackground from '../../../assests/hero.png'
 import heroLogo from '../../../assests/logo-hero.png'
 import heroLogoDesktop from '../../../assests/logo-hero-desktop.png'
+import { ConfirmButton } from '../../ConfirmButton/ConfirmButton'
 import './Hero.sass'
 
 export function Hero() {
-  const navigate = useNavigate()
-
-  function handleNavigate() {
-    navigate('/login', { preventScrollReset: true })
-  }
-
   return (
     <div className="relative">
       <Image src={heroBackground} alt="Imagem Hero" className="backgroundImg" />
@@ -30,9 +24,12 @@ export function Hero() {
             <p className="d-none d-lg-flex my-xl font-md color-light">
               Pague suas contas pelo nosso APP
             </p>
-            <Button variant="outline-light px-2xl py-md font-xs" onClick={handleNavigate}>
-              Abra sua conta
-            </Button>
+            <ConfirmButton
+              variant="outline-light"
+              text="Abra sua conta"
+              divClassName=""
+              buttonStyle="three"
+            />
           </Col>
         </Row>
       </Container>

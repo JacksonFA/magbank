@@ -11,7 +11,7 @@ import { IconText } from '../../IconText/IconText'
 
 export function FAQ() {
   return (
-    <section className="bg-gray-400 color-white">
+    <section id="faq" className="bg-gray-400 color-white py-2xl">
       <Container>
         <Row>
           <Col>

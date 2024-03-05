@@ -217,6 +217,7 @@
 .fixed
   position: sticky
   top: 0
+  z-index: 99
 
 .absolute
   position: absolute
@@ -235,18 +236,21 @@
     line-height: 2.4rem
     font-weight: 400
     &-special
+      @extend .font-sm
       font-weight: bold
   &-md
     font-size: 2.6rem
     line-height: 3.2rem
     font-weight: 400
     &-special
+      @extend .font-md
       font-weight: bold
   &-lg
     font-size: 3.6rem
     line-height: 4.8rem
     font-weight: 500
     &-special
+      @extend .font-lg
       font-weight: bold
   &-xl
     font-size: 5.1rem

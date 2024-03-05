@@ -6,6 +6,7 @@ import { Loading } from '../components/Loading/Loading'
 
 const Home = lazy(() => import('../pages/Home'))
 const Login = lazy(() => import('../pages/Login'))
+const Dashboard = lazy(() => import('../pages/Dashboard'))
 const PageNotFound = lazy(() => import('../pages/PageNotFound'))
 
 const getRouteElement = (Component) => (
@@ -19,6 +20,7 @@ const getRouteElement = (Component) => (
 const routes = [
   { path: paths.HOME, element: getRouteElement(Home) },
   { path: paths.LOGIN, element: getRouteElement(Login) },
+  { path: paths.DASHBOARD, element: getRouteElement(Dashboard) },
   { path: paths.NOT_FOUND, element: getRouteElement(PageNotFound) },
 ]
 

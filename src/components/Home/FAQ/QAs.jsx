@@ -9,7 +9,7 @@ QAs.propTypes = {
 export function QAs({ lg = false }) {
   const fontSize = lg ? 'fs-5' : 'fs-6'
   return (
-    <Accordion defaultActiveKey="1" className="mt-4 py-xl">
+    <Accordion defaultActiveKey="0" className="mt-4 py-xl">
       <Accordion.Item eventKey="0">
         <Accordion.Header className="bg-gray-400">Como funciona o atendimento?</Accordion.Header>
         <Accordion.Body className={`color-white bg-gray-400 ${fontSize}`}>

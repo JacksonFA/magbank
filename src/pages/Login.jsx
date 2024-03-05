@@ -1,19 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom'
+// import { Link, useNavigate } from 'react-router-dom'
+import { LoginForm } from '../components/Login/LoginForm/LoginForm'
 
 export default function Login() {
-  // const navigate = useNavigate()
-  // function goBack() {
-  //   window.history.back()
-  //   // navigate('/')
-  // }
-
   return (
-    <main className="loginBgColor color-light w-full h-max grid-center gap-xl font-lg">
-      Login
-      {/* <a href='#' onClick={goBack} className="color-light">
-        Voltar
-      </a> */}
-      <Link to="/">Voltar</Link>
+    <main className="loginBgColor color-light w-full h-max flex-center">
+      <LoginForm />
     </main>
   )
 }

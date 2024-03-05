@@ -25,7 +25,7 @@ export default function Home() {
         <Hero />
         <Resources />
         <CardList cards={cards} />
-        <ConfirmButton action="Abra sua conta" />
+        <ConfirmButton text="Abra sua conta" />
         <Institutional />
         <FAQ />
       </main>
