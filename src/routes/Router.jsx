@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { paths } from './paths'
 import { Page } from '../components/Page'
-import { Loading } from '../components/Loading/Loading'
+import { Loading } from '../components/Shared/Loading/Loading'
 
 const Home = lazy(() => import('../pages/Home'))
 const Login = lazy(() => import('../pages/Login'))

@@ -19,6 +19,8 @@
     gap: 3.2rem
   &-2xl
     gap: 6.4rem
+  &-140
+    gap: 14rem
 
 //Margins
 .m
@@ -136,11 +138,12 @@
   
   &-columns
     @extend .grid
-    grid-template-columns: 1fr 2fr
+    grid-template-columns: 1fr 3fr 1fr
 
 .flex
+  display: flex
   &-start
-    display: flex
+    @extend .flex
     &-left
       @extend .flex-start
       align-items: flex-start
@@ -180,20 +183,28 @@
       @extend .flex-start
       flex-direction: row
 
+  &-end
+    @extend .flex
+    align-items: center
+    justify-content: flex-end
+    &-column
+      @extend .flex-end
+      align-items: flex-end
+      flex-direction: column
+
   &-center
-    display: flex
+    @extend .flex
     justify-content: center
     align-items: center
     &-row
       @extend .flex-center
       flex-direction: row
-
     &-column
       @extend .flex-center
       flex-direction: column
 
   &-space-between
-    display: flex
+    @extend .flex
     align-items: center
     justify-content: space-between
     &-row
@@ -296,6 +307,8 @@
     width: 5rem
   &-30
     width: 3rem
+  &-320
+    width: 32rem
 
 .color
   &-black
@@ -387,6 +400,8 @@
 
 
 .bg
+  &-none
+    background: none
   &-black
     background-color: $surface-dark
   &-light
@@ -481,3 +496,6 @@
   transition: .5s
   &:hover
     filter: opacity(0.6)
+
+.bx-sh
+  box-shadow: rgb(0 0 0 / 29%) 0 .4rem .6rem 0

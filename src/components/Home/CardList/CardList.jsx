@@ -1,6 +1,6 @@
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { array } from 'prop-types'
-import { Loading } from '../../Loading/Loading'
+import { Loading } from '../../Shared/Loading/Loading'
 
 CardList.propTypes = {
   cards: array,

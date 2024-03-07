@@ -1,7 +1,7 @@
 import { Col, Image, Row } from 'react-bootstrap'
-import { IconText } from '../../IconText/IconText'
-import creditCard from '../../../assests/credit_card.png'
 import { faCartShopping, faCreditCard, faMobile, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { IconText } from '../../Shared/IconText/IconText'
+import creditCard from '../../../assests/credit_card.png'
 import './Resources.sass'
 
 export function Resources() {

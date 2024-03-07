@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
-import { Logo } from '../../Logo/Logo'
-import { ConfirmButton } from '../../ConfirmButton/ConfirmButton'
+import { Logo } from '../../Shared/Logo/Logo'
+import { ConfirmButton } from '../../Shared/ConfirmButton/ConfirmButton'
 import { LoginTypeContext } from '../../../contexts/LoginTypeContext'
 import './LoginForm.sass'
 
 export function LoginForm() {
   const navigate = useNavigate()
-  const { type } = useContext(LoginTypeContext)
+  const { type, setIsLogged } = useContext(LoginTypeContext)
   const [loginType, setLoginType] = useState('Criar conta')
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export function LoginForm() {
   }, [])
 
   function handleLogin() {
+    setIsLogged(true)
     navigate('/dashboard')
   }
 

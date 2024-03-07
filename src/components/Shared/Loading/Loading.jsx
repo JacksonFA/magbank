@@ -1,5 +1,5 @@
-import './Loading.sass'
 import { bool, string } from 'prop-types'
+import './Loading.sass'
 
 Loading.propTypes = {
   withBackground: bool,

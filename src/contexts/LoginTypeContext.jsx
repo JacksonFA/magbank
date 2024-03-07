@@ -9,6 +9,11 @@ LoginTypeProvider.propTypes = {
 
 export function LoginTypeProvider({ children }) {
   const [type, setType] = useState('')
+  const [isLogged, setIsLogged] = useState(false)
 
-  return <LoginTypeContext.Provider value={{ type, setType }}>{children}</LoginTypeContext.Provider>
+  return (
+    <LoginTypeContext.Provider value={{ type, setType, isLogged, setIsLogged }}>
+      {children}
+    </LoginTypeContext.Provider>
+  )
 }

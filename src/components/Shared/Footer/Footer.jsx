@@ -1,10 +1,10 @@
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import { FooterLogo } from '../Logo/FooterLogo'
-import applestore from '../../assests/applestore.png'
-import googleplay from '../../assests/googleplay.png'
-import facebookIcon from '../../assests/facebook.png'
-import twitterIcon from '../../assests/twitter.png'
-import youtubeIcon from '../../assests/youtube.png'
+import applestore from '../../../assests/applestore.png'
+import googleplay from '../../../assests/googleplay.png'
+import facebookIcon from '../../../assests/facebook.png'
+import twitterIcon from '../../../assests/twitter.png'
+import youtubeIcon from '../../../assests/youtube.png'
 
 export function Footer() {
   return (

@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { string, func } from 'prop-types'
-import { LoginTypeContext } from '../../contexts/LoginTypeContext'
+import { LoginTypeContext } from '../../../contexts/LoginTypeContext'
 import './ConfirmButton.sass'
 
 ConfirmButton.propTypes = {

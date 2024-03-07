@@ -7,7 +7,7 @@ import {
   faUserCheck,
 } from '@fortawesome/free-solid-svg-icons'
 import { QAs } from './QAs'
-import { IconText } from '../../IconText/IconText'
+import { IconText } from '../../Shared/IconText/IconText'
 
 export function FAQ() {
   return (

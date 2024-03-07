@@ -9,12 +9,10 @@ Desktop.propTypes = {
 
 export function Desktop({ extendProps }) {
   return (
-    <div className={`${extendProps} container h-50`}>
+    <div className={`${extendProps} container h-50 gap-140`}>
       <Logo />
-      <div className="w-full flex-space-between">
-        <NavLinks className="flex-center gap-xl font-xs" />
-        <NavButtons />
-      </div>
+      <NavLinks className="flex-center gap-xl font-xs" />
+      <NavButtons />
     </div>
   )
 }
