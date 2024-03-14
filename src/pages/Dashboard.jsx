@@ -4,10 +4,13 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { Footer } from '../components/Shared/Footer/Footer'
 import { Header } from '../components/Shared/Header/Header'
 import { Search } from '../components/Dashboard/Search/Search'
+import { Menus } from '../components/Dashboard/Menus/Menus'
+import { Sessions } from '../components/Dashboard/Sessions/Sessions'
+import { DashboardProvider } from '../contexts/DashboardContext'
 
 export default function Dashboard() {
   return (
-    <>
+    <DashboardProvider>
       <Header />
       <main className="h-max">
         <Container>
@@ -33,25 +36,15 @@ export default function Dashboard() {
           </Row>
           <Row>
             <Col lg={4} className="d-none d-lg-flex flex-center">
-              <div className="flex-start-column gap-xl">
-                <a href="#conta" className="color-purple-200 font-sm hover dec-none">
-                  Minha conta
-                </a>
-                <a href="#pagamento" className="color-purple-200 font-sm hover dec-none">
-                  Pagamento
-                </a>
-                <a href="#extrato" className="color-purple-200 font-sm hover dec-none">
-                  Extrato
-                </a>
-              </div>
+              <Menus display="flex-start-column gap-xl" textColor="color-purple-200" />
             </Col>
             <Col lg={8}>
-              <p className="font-md">Extrato de conta</p>
+              <Sessions />
             </Col>
           </Row>
         </Container>
       </main>
       <Footer />
-    </>
+    </DashboardProvider>
   )
 }

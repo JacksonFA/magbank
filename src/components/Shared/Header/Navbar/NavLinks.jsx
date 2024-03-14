@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { string } from 'prop-types'
 import { Search } from '../../../Dashboard/Search/Search'
 import { LoginTypeContext } from '../../../../contexts/LoginTypeContext'
+import { Menus } from '../../../Dashboard/Menus/Menus'
 
 NavLinks.propTypes = {
   className: string.isRequired,
@@ -14,17 +15,7 @@ export function NavLinks({ className }) {
       {isLogged ? (
         <>
           <Search display="d-none d-lg-flex" />
-          <div className="d-lg-none flex-start-column gap-xl">
-            <a href="#cartao" className="color-light font-sm hover dec-none">
-              Minha conta
-            </a>
-            <a href="#quemsomos" className="color-light font-sm hover dec-none">
-              Pagamento
-            </a>
-            <a href="#faq" className="color-light font-sm hover dec-none">
-              Extrato
-            </a>
-          </div>
+          <Menus display="d-lg-none flex-start-column gap-xl" textColor="color-white" />
         </>
       ) : (
         <>

@@ -238,10 +238,14 @@
 
 .font
   &-xs
-    font-size: 1.4rem
+    font-size: 1.2rem
     line-height: 1.8rem
     letter-spacing: 0.04em
     font-weight: 100
+    &-special
+      @extend .font-xs
+      font-size: 1.4rem
+      font-weight: 900
   &-sm
     font-size: 1.8rem
     line-height: 2.4rem
