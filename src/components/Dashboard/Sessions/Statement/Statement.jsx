@@ -24,8 +24,8 @@ export function Statement() {
   }
 
   return (
-    <>
-      <Row className="w-full text-center">
+    <Col xs={12} lg={8}>
+      <Row>
         <Col className="font-md-special">Extrato de conta corrente</Col>
       </Row>
       <Table transactions={transactions} />
@@ -42,6 +42,6 @@ export function Statement() {
           <p>Saldo (R$): R$ 1.000,00</p>
         </Col>
       </Row>
-    </>
+    </Col>
   )
 }

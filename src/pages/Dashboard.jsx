@@ -35,8 +35,8 @@ export default function Dashboard() {
             <Col xs={1} lg={6} />
           </Row>
           <Row>
-            <Col lg={4} className="d-none d-lg-flex flex-center">
-              <Menus display="flex-start-column gap-xl" textColor="color-purple-200" />
+            <Col lg={4} className="d-none d-lg-flex flex-center align-items-start">
+              <Menus display="flex-start-column gap-xs" textColor="purple" />
             </Col>
             <Col lg={8}>
               <Sessions />

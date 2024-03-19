@@ -1,38 +1,20 @@
-import { Col, Button, Tabs, Tab, Form } from 'react-bootstrap'
+import { Col, Tabs, Tab, Form, Row } from 'react-bootstrap'
+import { PaymentForm } from './PaymentForm'
+import './Payment.sass'
 
 export function Payment() {
   return (
-    <Col xs={12} lg={8} className="mt-lg-5 pt-lg-5">
-      <h3 className="mt-4">Pagamentos</h3>
+    <Col xs={12} lg={8} className="payment">
+      <Row>
+        <Col className="font-md-special">Pagamentos</Col>
+      </Row>
       <Tabs className="mt-5 pt-lg-2" defaultActiveKey="boleto">
         <Tab eventKey="boleto" title="Boleto">
-          <Form>
-            <Form.Group controlId="formBarCode" className="my-5">
-              <Form.Label>Código de barras</Form.Label>
-              <Form.Control type="number" placeholder="Insira o código de barras" />
-            </Form.Group>
-            <Form.Group controlId="formPaymentType" className="mb-5">
-              <Form.Label>Forma de Pagamento</Form.Label>
-              <div className="d-flex">
-                <Form.Check
-                  type="radio"
-                  id="debit"
-                  label="Débito em Conta Corrente"
-                  name="paymentType"
-                />
-                <Form.Check
-                  type="radio"
-                  id="credit"
-                  className="ml-4"
-                  label="Cartão de Crédito"
-                  name="paymentType"
-                />
-              </div>
-            </Form.Group>
-            <Button variant="success">Continuar</Button>
-          </Form>
+          <PaymentForm inputLabel="Código de barras" inputPlaceholder="Insira o código de barras" />
         </Tab>
-        <Tab eventKey="transfer" title="Transferência"></Tab>
+        <Tab eventKey="transfer" title="Transferência">
+          <PaymentForm inputLabel="Conta de destino" inputPlaceholder="Insira a conta de destino" />
+        </Tab>
       </Tabs>
     </Col>
   )

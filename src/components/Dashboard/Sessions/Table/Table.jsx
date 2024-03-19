@@ -2,7 +2,7 @@ import { Row, Col } from 'react-bootstrap'
 import { array } from 'prop-types'
 
 Table.propTypes = {
-  transactions: array.isRequired,
+  transactions: array,
 }
 
 export function Table({ transactions }) {
@@ -14,11 +14,13 @@ export function Table({ transactions }) {
         <Col>Valor (R$)</Col>
       </Row>
       {transactions &&
-        transactions.map(({ id, date, description, value }) => (
+        transactions.map(({ id, date, description, value, isIncome }) => (
           <Row key={id} className="w-full py-sm text-center">
             <Col className="font-sm">{date}</Col>
             <Col className="font-xs">{description}</Col>
-            <Col className="font-xs-special">{value}</Col>
+            <Col className={`font-xs-special ${isIncome ? 'color-green-100' : 'color-red-200'}`}>
+              {isIncome ? `+R$ ${value}` : `-R$ ${value}`}
+            </Col>
           </Row>
         ))}
     </>
