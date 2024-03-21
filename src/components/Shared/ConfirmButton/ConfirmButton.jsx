@@ -21,10 +21,10 @@ export function ConfirmButton({
   handle,
 }) {
   const navigate = useNavigate()
-  const { setType } = useContext(LoginTypeContext)
+  const { setLoginType } = useContext(LoginTypeContext)
 
   function handleNavigate() {
-    setType('createAccount')
+    setLoginType('createAccount')
     navigate('/login', { preventScrollReset: true })
   }
 

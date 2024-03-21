@@ -6,16 +6,11 @@ import { ConfirmButton } from '../../ConfirmButton/ConfirmButton'
 
 export function NavButtons() {
   const navigate = useNavigate()
-  const { setType, isLogged, setIsLogged } = useContext(LoginTypeContext)
+  const { setLoginType, isLogged, handleLogout } = useContext(LoginTypeContext)
 
   function handleNavigateToLogin(loginType) {
-    setType(loginType)
+    setLoginType(loginType)
     navigate('/login', { preventScrollReset: true })
-  }
-
-  function handleNavigateToHome() {
-    setIsLogged(false)
-    navigate('/', { preventScrollReset: true })
   }
 
   return (
@@ -26,7 +21,7 @@ export function NavButtons() {
           variant="outline-light"
           divClassName="flex-start"
           buttonStyle="five"
-          handle={handleNavigateToHome}
+          handle={handleLogout}
         />
       ) : (
         <ButtonGroup className="w-320 flex-center">
