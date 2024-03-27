@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Table } from '../Table/Table'
-import { Loading } from '../../../Shared/Loading/Loading'
 import { transactionsData } from '../../../../data/transactions'
 
 export function AccountContent() {
@@ -16,8 +15,7 @@ export function AccountContent() {
 
   return (
     <>
-      <Table transactions={transactions} />
-      {isLoading && <Loading withBackground={false} text="Carregando..." />}
+      <Table transactions={transactions} isLoading={isLoading} />
     </>
   )
 }

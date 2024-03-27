@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
@@ -8,7 +9,18 @@ import { Menus } from '../components/Dashboard/Menus/Menus'
 import { Sessions } from '../components/Dashboard/Sessions/Sessions'
 import { DashboardProvider } from '../contexts/DashboardContext'
 
+// const userLogged = JSON.parse(localStorage.getItem('user'))
+// console.log('RENDERIZANDO O COMPONENTE!')
+// console.log(userLogged)
+
 export default function Dashboard() {
+  const [userLogged, setUserLogged] = useState({ name: '', account: '' })
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('user'))
+    setUserLogged(userData)
+  }, [])
+
   return (
     <DashboardProvider>
       <Header />
@@ -27,8 +39,8 @@ export default function Dashboard() {
                   <FontAwesomeIcon icon={faUser} size="3x" color="gray" />
                 </Col>
                 <Col xs={8} lg={10}>
-                  <p className="font-sm-special">Felipe Campo</p>
-                  <span className="color-gray-800 font-xs">agência: 1234 conta: 123</span>
+                  <p className="font-sm-special">{userLogged.name}</p>
+                  <span className="color-gray-800 font-xs">{`agência: 0001 conta: ${userLogged.account}`}</span>
                 </Col>
               </Row>
             </Col>

@@ -4,6 +4,7 @@ import { Logo } from '../../Shared/Logo/Logo'
 import { ConfirmButton } from '../../Shared/ConfirmButton/ConfirmButton'
 import { LoginTypeContext } from '../../../contexts/LoginTypeContext'
 import './LoginForm.sass'
+import { Show } from '../../Shared/Show/Show'
 
 const FULL_NAME_RGX = /^[a-zA-Z]+ [a-zA-Z]+(?: [a-zA-Z]+)*$/
 const NUMBER_RGX = /^\d+$/
@@ -88,31 +89,33 @@ export function LoginForm() {
     <section className="login-container">
       <Logo />
       <Form className="login-form">
-        {loginType === 'createAccount' && (
-          <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label className="font-sm-special">Nome e Sobrenome</Form.Label>
-            <Form.Control
-              className="font-md mt-3"
-              type="text"
-              placeholder="Ex.: John Doe"
-              value={nameReducer}
-              onChange={(e) => dispatchNameReducer(e.target.value)}
-            />
-          </Form.Group>
-        )}
-        {loginType !== 'createAccount' && (
-          <Form.Group className="mb-3" controlId="formBasicAccount">
-            <Form.Label className="font-sm-special">Número da conta</Form.Label>
-            <Form.Control
-              className="font-md mt-3"
-              type="text"
-              placeholder="Ex.: 0000-0"
-              // ref={accountInputRef}
-              value={accountReducer}
-              onChange={(e) => dispatchAccountReducer(e.target.value)}
-            />
-          </Form.Group>
-        )}
+        <Show>
+          <Show.When isTrue={loginType === 'createAccount'}>
+            <Form.Group className="mb-3" controlId="formBasicName">
+              <Form.Label className="font-sm-special">Nome e Sobrenome</Form.Label>
+              <Form.Control
+                className="font-md mt-3"
+                type="text"
+                placeholder="Ex.: John Doe"
+                value={nameReducer}
+                onChange={(e) => dispatchNameReducer(e.target.value)}
+              />
+            </Form.Group>
+          </Show.When>
+          <Show.When isTrue={loginType !== 'createAccount'}>
+            <Form.Group className="mb-3" controlId="formBasicAccount">
+              <Form.Label className="font-sm-special">Número da conta</Form.Label>
+              <Form.Control
+                className="font-md mt-3"
+                type="text"
+                placeholder="Ex.: 0000-0"
+                // ref={accountInputRef}
+                value={accountReducer}
+                onChange={(e) => dispatchAccountReducer(e.target.value)}
+              />
+            </Form.Group>
+          </Show.When>
+        </Show>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label className="font-sm-special">Senha</Form.Label>
           <Form.Control

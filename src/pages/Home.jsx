@@ -7,15 +7,17 @@ import { Institutional } from '../components/Home/Institutional/Institutional'
 import { FAQ } from '../components/Home/FAQ/FAQ'
 import { ConfirmButton } from '../components/Shared/ConfirmButton/ConfirmButton'
 import { Footer } from '../components/Shared/Footer/Footer'
-import { cardsData } from '../data/cards'
 
 export default function Home() {
   const [cards, setCards] = useState(null)
 
   useEffect(() => {
-    setTimeout(() => {
-      setCards(cardsData)
-    }, 3000)
+    ;(async () => {
+      const cardsDataBuffer = await fetch('http://localhost:3000/cards')
+      const cardsDataJson = await cardsDataBuffer.json()
+      await new Promise((resolve) => setTimeout(() => resolve(true), 2000))
+      setCards(cardsDataJson)
+    })()
   }, [])
 
   return (

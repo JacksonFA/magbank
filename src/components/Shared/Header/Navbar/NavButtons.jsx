@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, ButtonGroup, NavDropdown } from 'react-bootstrap'
 import { LoginTypeContext } from '../../../../contexts/LoginTypeContext'
 import { ConfirmButton } from '../../ConfirmButton/ConfirmButton'
+import { Show } from '../../Show/Show'
 
 export function NavButtons() {
   const navigate = useNavigate()
@@ -14,8 +15,8 @@ export function NavButtons() {
   }
 
   return (
-    <>
-      {isLogged ? (
+    <Show>
+      <Show.When isTrue={isLogged}>
         <ConfirmButton
           text="Sair"
           variant="outline-light"
@@ -23,7 +24,8 @@ export function NavButtons() {
           buttonStyle="five"
           handle={handleLogout}
         />
-      ) : (
+      </Show.When>
+      <Show.Else>
         <ButtonGroup className="w-320 flex-center">
           <Button variant="outline-light" className="h-30 py-md font-xs flex-center">
             <NavDropdown title="Acessar minha conta" id="basic-nav-dropdown">
@@ -43,7 +45,7 @@ export function NavButtons() {
             Abra sua conta
           </Button>
         </ButtonGroup>
-      )}
-    </>
+      </Show.Else>
+    </Show>
   )
 }

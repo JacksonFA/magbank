@@ -19,7 +19,6 @@ export function LoginTypeProvider({ children }) {
 
   function setLoginType(value) {
     setType(value)
-    console.log(users)
     localStorage.setItem('loginType', value)
   }
 

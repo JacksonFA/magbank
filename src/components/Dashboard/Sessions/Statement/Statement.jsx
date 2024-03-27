@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { Table } from '../Table/Table'
 import { transactionsData, extraTransactionsData } from '../../../../data/transactions'
-import { Loading } from '../../../Shared/Loading/Loading'
 
 export function Statement() {
   const [transactions, setTransactions] = useState(null)
@@ -28,8 +27,7 @@ export function Statement() {
       <Row>
         <Col className="font-md-special">Extrato de conta corrente</Col>
       </Row>
-      <Table transactions={transactions} />
-      {isLoading && <Loading withBackground={false} text="Carregando extrato..." />}
+      <Table transactions={transactions} isLoading={isLoading} />
       <Row className="w-full text-center py-xl">
         <Col>
           <a href="#" className="font-sm color-gray-900" onClick={loadMoreData}>
