@@ -1,8 +1,26 @@
-# React + Vite
+![Magbank](./.github/assets/desktop.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# MAGBANK
 
-Currently, two official plugins are available:
+This application was developed during the Global Dev course at Imagine School using React, Vite, Sass, and Bootstrap.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In addition, the development was guided by some Mobile First concepts.
+
+![Magbank](./.github/assets/mobile.png)
+
+## Running Locally
+
+After cloning the repository, access the project folder and run the following commands:
+
+```sh
+yarn
+yarn dev
+```
+
+In another terminal tab, run the command below to start the JSON-Server API:
+
+```sh
+yarn db
+```
+
+Access <http://localhost:5173> to view the application.
