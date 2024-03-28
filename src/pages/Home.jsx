@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Header } from '../components/Shared/Header/Header'
 import { Hero } from '../components/Home/Hero/Hero'
 import { Resources } from '../components/Home/Resources/Resources'
@@ -13,10 +14,9 @@ export default function Home() {
 
   useEffect(() => {
     ;(async () => {
-      const cardsDataBuffer = await fetch('http://localhost:3000/cards')
-      const cardsDataJson = await cardsDataBuffer.json()
+      const response = await axios.get('http://localhost:3000/cards')
       await new Promise((resolve) => setTimeout(() => resolve(true), 2000))
-      setCards(cardsDataJson)
+      setCards(response.data)
     })()
   }, [])
 

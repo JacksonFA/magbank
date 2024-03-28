@@ -1,73 +1,42 @@
 {
   cards: [
     {
-      id: 1,
+      id: '1',
       image: '/card1.png',
       title: 'Lorem Ipsum',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente exercitationem suscipit, ratione nisi libero? Officiis itaque culpa quibusdam exercitationem provident dicta tempore iusto officia aspernatur dolor ab, qui totam?',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente exercitationem suscipit, ratione nisi libero? Officiis itaque culpa quibusdam exercitationem provident dicta tempore iusto officia aspernatur dolor ab, qui totam?',
       action: 'Peça já o seu',
     },
     {
-      id: 2,
+      id: '2',
       image: '/card2.png',
       title: 'Lorem Ipsum',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente exercitationem suscipit, ratione nisi libero? Officiis itaque culpa quibusdam exercitationem provident dicta tempore iusto officia aspernatur dolor ab, qui totam?',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente exercitationem suscipit, ratione nisi libero? Officiis itaque culpa quibusdam exercitationem provident dicta tempore iusto officia aspernatur dolor ab, qui totam?',
       action: 'Peça já o seu',
     },
     {
-      id: 3,
+      id: '3',
       image: '/card3.png',
       title: 'Lorem Ipsum',
-      content:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente exercitationem suscipit, ratione nisi libero? Officiis itaque culpa quibusdam exercitationem provident dicta tempore iusto officia aspernatur dolor ab, qui totam?',
+      content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente exercitationem suscipit, ratione nisi libero? Officiis itaque culpa quibusdam exercitationem provident dicta tempore iusto officia aspernatur dolor ab, qui totam?',
       action: 'Peça já o seu',
     },
   ],
   transactions: [
+    { id: '1', date: '17/08', description: 'Saque 24h', value: '200,00', isIncome: false },
+    { id: '2', date: '17/08', description: 'Salário', value: '4.220,00', isIncome: true },
     {
-      id: 1,
-      date: '17/08',
-      description: 'Saque 24h',
-      value: '200,00',
-      isIncome: false,
-    },
-    {
-      id: 2,
-      date: '17/08',
-      description: 'Salário',
-      value: '4.220,00',
-      isIncome: true,
-    },
-    {
-      id: 3,
+      id: '3',
       date: '19/09',
       description: 'Estacionamento 450165',
       value: '20,00',
       isIncome: false,
     },
-    {
-      id: 4,
-      date: '20/10',
-      description: 'Supermercado',
-      value: '1000,00',
-      isIncome: false,
-    },
-    {
-      id: 5,
-      date: '21/10',
-      description: 'Shopping',
-      value: '2000,00',
-      isIncome: false,
-    },
+    { id: '4', date: '20/10', description: 'Supermercado', value: '1000,00', isIncome: false },
+    { id: '5', date: '21/10', description: 'Shopping', value: '2000,00', isIncome: false },
   ],
   users: [
-    {
-      name: 'John Doe',
-      account: 12345,
-      password: '12345',
-      isPF: true,
-    },
-  ]
+    { name: 'John Doe', account: 12345, password: '12345', isPF: true, id: '576d' },
+    { id: '57c6', name: 'Jackson Arceno', account: 22403, password: '12345', isPF: true },
+  ],
 }

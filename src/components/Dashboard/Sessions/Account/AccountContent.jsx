@@ -7,10 +7,13 @@ export function AccountContent() {
   const [isLoading, setisLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => {
-      setTransactions(transactionsData)
+    ;(async () => {
+      const transactions = await fetch('http://localhost:3000/transactions')
+      const transactionsJson = await transactions.json()
+      await new Promise((resolve) => setTimeout(() => resolve(true), 1000))
+      setTransactions(transactionsJson)
       setisLoading(false)
-    }, 1000)
+    })()
   }, [])
 
   return (

@@ -26,15 +26,23 @@ export function LoginTypeProvider({ children }) {
     return Math.floor(Math.random() * 90000) + 10000
   }
 
-  function createNewAccount(name, password) {
+  async function createNewAccount(name, password) {
     const account = generateAccountNumber()
     const userData = { name, account }
-    users.push({ ...userData, password, isPF: true })
+    await fetch('http://localhost:3000/users', {
+      body: JSON.stringify({ ...userData, password, isPF: true }),
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+    })
     loginUser(userData)
   }
 
-  function validateAndLoginUser(account, password) {
-    const foundUser = users.find((user) => user.account == account && user.password === password)
+  async function validateAndLoginUser(account, password) {
+    const users = await fetch('http://localhost:3000/users')
+    const usersJson = await users.json()
+    const foundUser = usersJson.find(
+      (user) => user.account == account && user.password === password
+    )
     if (!foundUser) {
       return alert('Conta ou senha inválida')
     }
