@@ -1,10 +1,15 @@
 import { Col, Image, Row } from 'react-bootstrap'
 import { faCartShopping, faCreditCard, faMobile, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { func } from 'prop-types'
 import { IconText } from '../../Shared/IconText/IconText'
 import creditCard from '../../../assests/credit_card.png'
 import './Resources.sass'
 
-export function Resources() {
+Resources.propTypes = {
+  handle: func,
+}
+
+export function Resources({ handle }) {
   return (
     <section id="cartao" className="container py-2xl">
       <Row className="p-lg-5">
@@ -28,7 +33,7 @@ export function Resources() {
           </div>
         </Col>
         <Col lg>
-          <div className="text-center py-2xl">
+          <div className="text-center py-2xl" onClick={handle}>
             <Image src={creditCard} className="credit-card" />
           </div>
         </Col>

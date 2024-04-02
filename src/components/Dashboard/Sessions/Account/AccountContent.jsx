@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react'
+import { string } from 'prop-types'
 import { Table } from '../Table/Table'
 import { transactionsData } from '../../../../data/transactions'
 
-export function AccountContent() {
+AccountContent.propTypes = {
+  tab: string,
+}
+
+export function AccountContent({ tab }) {
   const [transactions, setTransactions] = useState(null)
   const [isLoading, setisLoading] = useState(true)
 
@@ -18,7 +23,7 @@ export function AccountContent() {
 
   return (
     <>
-      <Table transactions={transactions} isLoading={isLoading} />
+      <Table transactions={transactions} isLoading={isLoading} tab={tab} />
     </>
   )
 }

@@ -24,7 +24,7 @@ export default function Dashboard() {
   return (
     <DashboardProvider>
       <Header />
-      <main className="h-max">
+      <main>
         <Container>
           <Row className="py-xl">
             <Col>

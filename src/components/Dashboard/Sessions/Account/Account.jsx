@@ -1,12 +1,15 @@
+import { useState } from 'react'
 import { Col, Row, Tab, Tabs } from 'react-bootstrap'
 import { AccountContent } from './AccountContent'
 import './Account.sass'
 
 export function Account() {
+  const [clicked, setClicked] = useState(false)
+
   return (
     <Col xs={12} className="account">
       <Row>
-        <Col xs={12} className="font-md-special mb-5">
+        <Col xs={12} className="font-md-special mb-5" onClick={() => setClicked(!clicked)}>
           Saldo em conta
         </Col>
       </Row>
@@ -21,10 +24,10 @@ export function Account() {
         <Col xs={12}>
           <Tabs className="mt-5 pt-lg-2" defaultActiveKey="past">
             <Tab eventKey="past" title="Ultimos lançamentos">
-              <AccountContent />
+              <AccountContent tab="last" />
             </Tab>
             <Tab eventKey="future" title="Lançamentos futuros">
-              <AccountContent />
+              <AccountContent tab="future" />
             </Tab>
           </Tabs>
         </Col>
