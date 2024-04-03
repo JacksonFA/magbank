@@ -9,10 +9,6 @@ import { Menus } from '../components/Dashboard/Menus/Menus'
 import { Sessions } from '../components/Dashboard/Sessions/Sessions'
 import { DashboardProvider } from '../contexts/DashboardContext'
 
-// const userLogged = JSON.parse(localStorage.getItem('user'))
-// console.log('RENDERIZANDO O COMPONENTE!')
-// console.log(userLogged)
-
 export default function Dashboard() {
   const [userLogged, setUserLogged] = useState({ name: '', account: '' })
 

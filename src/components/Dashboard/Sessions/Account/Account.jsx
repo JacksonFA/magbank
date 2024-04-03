@@ -1,15 +1,12 @@
-import { useState } from 'react'
 import { Col, Row, Tab, Tabs } from 'react-bootstrap'
 import { AccountContent } from './AccountContent'
 import './Account.sass'
 
 export function Account() {
-  const [clicked, setClicked] = useState(false)
-
   return (
     <Col xs={12} className="account">
       <Row>
-        <Col xs={12} className="font-md-special mb-5" onClick={() => setClicked(!clicked)}>
+        <Col xs={12} className="font-md-special mb-5">
           Saldo em conta
         </Col>
       </Row>

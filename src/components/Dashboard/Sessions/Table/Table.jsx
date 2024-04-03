@@ -13,7 +13,6 @@ Table.propTypes = {
 
 export function Table({ transactions, isLoading, tab }) {
   const filterTransactions = (transactions, tab) => {
-    console.log('Criando função')
     if (tab === 'future') return transactions?.filter((transaction) => transaction.isIncome)
     return transactions?.filter((transaction) => !transaction.isIncome)
   }

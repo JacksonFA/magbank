@@ -1,16 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Button, Card, Col } from 'react-bootstrap'
-import { object } from 'prop-types'
 import { memo } from 'react'
+import { Button, Card, Col } from 'react-bootstrap'
 
-// CardItem.propTypes = {
-//   data: object,
-// }
-
-export const CardItem = memo(function CardItem({ data, handle }) {
+export const CardItem = memo(function CardItem({ data }) {
   const { id, image, title, content, action } = data
-
-  console.log('CRIANDO O COMPONENTE CARDITEM')
 
   return (
     <Col key={id} xs={12} lg={4}>
@@ -19,9 +12,7 @@ export const CardItem = memo(function CardItem({ data, handle }) {
         <Card.Body>
           <Card.Title className="py-md font-sm-special">{title}</Card.Title>
           <Card.Text className="font-xs">{content}</Card.Text>
-          <Button variant="danger" onClick={() => handle(id)}>
-            {action}
-          </Button>
+          <Button variant="danger">{action}</Button>
         </Card.Body>
       </Card>
     </Col>

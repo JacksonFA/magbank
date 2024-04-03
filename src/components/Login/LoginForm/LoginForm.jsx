@@ -1,25 +1,15 @@
-import { useContext, useEffect, useReducer, useState } from 'react'
+import { useContext, useReducer, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { Logo } from '../../Shared/Logo/Logo'
 import { ConfirmButton } from '../../Shared/ConfirmButton/ConfirmButton'
 import { LoginTypeContext } from '../../../contexts/LoginTypeContext'
-import './LoginForm.sass'
 import { Show } from '../../Shared/Show/Show'
+import './LoginForm.sass'
 
 const FULL_NAME_RGX = /^[a-zA-Z]+ [a-zA-Z]+(?: [a-zA-Z]+)*$/
 const NUMBER_RGX = /^\d+$/
 
 export function LoginForm() {
-  // let accountInputValue = ''
-  // let passwordInputValue = ''
-  // const accountInputRef = useRef()
-  // const passwordInputRef = useRef()
-
-  // Exemplo de função para inicializar um useReducer
-  // function initialAccount() {
-  //   return ''
-  // }
-
   const { type: loginType, handleLogin } = useContext(LoginTypeContext)
   const buttonText =
     loginType === 'createAccount'
@@ -47,12 +37,6 @@ export function LoginForm() {
   const [passwordInputState, setPasswordInputState] = useState('')
 
   function handleSubmitLogin() {
-    //   if (accountInputRef.current.value === '') {
-    //     accountInputRef.current.style.background = 'red'
-    //   } else {
-    //     accountInputRef.current.style.background = 'green'
-    //     accountInputRef.current.style.color = 'white'
-    //   }
     if (loginType === 'createAccount' && !nameReducer) {
       return alert('Você precisa informar o nome')
     }
@@ -71,19 +55,6 @@ export function LoginForm() {
       password: passwordInputState,
     })
   }
-
-  function debounceTime(func, delay) {
-    let timeoutId
-    return function (...args) {
-      if (timeoutId) {
-        clearTimeout(timeoutId)
-      }
-      timeoutId = setTimeout(() => {
-        func(...args)
-      }, delay)
-    }
-  }
-  const handleInputChange = debounceTime((e) => dispatchAccountReducer(e), 1000)
 
   return (
     <section className="login-container">
@@ -109,7 +80,6 @@ export function LoginForm() {
                 className="font-md mt-3"
                 type="text"
                 placeholder="Ex.: 0000-0"
-                // ref={accountInputRef}
                 value={accountReducer}
                 onChange={(e) => dispatchAccountReducer(e.target.value)}
               />
@@ -122,7 +92,6 @@ export function LoginForm() {
             className="font-md mt-3"
             type="password"
             placeholder="Ex.: 1234"
-            // ref={passwordInputRef}
             onChange={(e) => setPasswordInputState(e.target.value)}
           />
         </Form.Group>

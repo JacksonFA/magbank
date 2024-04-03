@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import { elastic as Menu } from 'react-burger-menu'
 import { string } from 'prop-types'
 import { NavLinks } from './NavLinks'
 import { NavButtons } from './NavButtons'
 import { Logo } from '../../Logo/Logo'
 import './Mobile.sass'
-import { useState } from 'react'
 
 Mobile.propTypes = {
   extendProps: string.isRequired,

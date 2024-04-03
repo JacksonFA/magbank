@@ -29,20 +29,12 @@ export function LoginTypeProvider({ children }) {
   async function createNewAccount(name, password) {
     const account = generateAccountNumber()
     const userData = { name, account }
-    await fetch('http://localhost:3000/users', {
-      body: JSON.stringify({ ...userData, password, isPF: true }),
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
-    })
+    users.push({ ...userData, password, isPF: true })
     loginUser(userData)
   }
 
   async function validateAndLoginUser(account, password) {
-    const users = await fetch('http://localhost:3000/users')
-    const usersJson = await users.json()
-    const foundUser = usersJson.find(
-      (user) => user.account == account && user.password === password
-    )
+    const foundUser = users.find((user) => user.account == account && user.password === password)
     if (!foundUser) {
       return alert('Conta ou senha inválida')
     }

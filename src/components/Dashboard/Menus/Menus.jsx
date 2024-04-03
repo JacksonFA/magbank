@@ -11,9 +11,6 @@ Menus.propTypes = {
 
 export function Menus({ display, textColor, closeMenu }) {
   const { setVisibleMenu } = useContext(DashboardContext)
-  // const accountRef = useRef()
-  // const paymentRef = useRef()
-  // const statementRef = useRef()
   const linksRef = {
     account: createRef(),
     payment: createRef(),
