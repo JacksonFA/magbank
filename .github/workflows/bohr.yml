@@ -1,8 +1,9 @@
-name: bohr.io deploy
+name: production deploy
 on: 
   push:
   repository_dispatch:
     types: [bohr-dispatch]
+  workflow_dispatch:
 permissions: write-all
 jobs:
   deploy:
