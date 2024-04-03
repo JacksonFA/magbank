@@ -1,4 +1,7 @@
+
 ![Magbank](./.github/assets/desktop.png)
+
+[![production deploy](https://github.com/JacksonFA/magbank/actions/workflows/bohr.yml/badge.svg)](https://github.com/JacksonFA/magbank/actions/workflows/bohr.yml)
 
 # MAGBANK
 
